@@ -1,0 +1,67 @@
+{
+    "common": {
+        "port": 8080,
+        "appName": "Node PA Bot",
+        "dataSource": {
+            "mongo": {
+                "url": "mongodb://localhost:27017/pa-bot",
+                "poolSize": "100",
+                "ignoreConnectionError": false
+            },
+            "redis": {
+                "url": "localhost",
+                "port": 6379
+            }
+        },
+        "logger": {
+            "fullFormat": "[%level][%name-%pid][%file:%line][%time] - %message",
+            "minimalFormat": "[%name-%pid][%file:%line] - %message",
+            "level": "trace",
+            "appNameToDisplayInLog": "CSM",
+            "showHidden": false,
+            "stdout": {
+                "enabled": true
+            }
+        }
+    },
+    "development": {
+        "port": 9092,
+        "showHidden": true,
+        "serverUrl": "http://localhost:9092"
+    },
+    "production": {
+        "port": 80,
+        "serverUrl": "http://www.msm.com",
+        "logger": {
+            "logentries": {
+                "enabled": true
+            },
+            "stdout": {
+                "enabled": false
+            }
+        }
+    },
+    "test": {
+        "port": 9093,
+        "serverUrl": "http://localhost:9093",
+        "dataSource": {
+            "mongo": {
+                "url": "mongodb://localhost:27017/csm-test",
+                "poolSize": "100",
+                "ignoreConnectionError": false
+            }
+        }
+    },
+    "qa": {
+        "port": 10095,
+        "serverUrl": "http://csm.qa4.intelligrape.net",
+        "logger": {
+            "logentries": {
+                "enabled": true
+            }
+        }
+    }
+}
+
+
+

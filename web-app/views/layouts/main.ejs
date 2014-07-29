@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaStats Chameleon ScaleMaster Admin | <%- blocks.title %></title>
+    <% if(__appEnv.toLowerCase() == "production") { %>
+    <!--Include third party deps for production-->
+    <script type="text/javascript" src="<%= _config.webBuilds.dependencies.js %>"></script>
+    <script type="text/javascript" src="<%= _config.webBuilds.appLibrary.js %>"></script>
+    <link rel="stylesheet" href="<%= _config.webBuilds.dependencies.css %>"/>
+    <link rel="stylesheet" href="<%= _config.webBuilds.appLibrary.css %>"/>
+    <% } else { %>
+    <!--Include third party deps for dev-->
+    <script type="text/javascript" src="<%= _config.webBuilds.dependencies.jsDebug %>"></script>
+    <script type="text/javascript" src="<%= _config.webBuilds.appLibrary.jsDebug %>"></script>
+    <link rel="stylesheet" href="<%= _config.webBuilds.dependencies.css %>"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <% } %>
+    <%- scripts %>
+    <%- stylesheets %>
+</head>
+<body class="<%- blocks.bodyClass %>">
+<header>
+    <!--HEADER-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" style="color:white"><img class="nav-brand-logo"
+                                                                          src="/img/projectlogo.png" alt=""/></a>
+                <a class="navbar-brand" href="/" style="color:white">Chameleon ScaleMaster | <span
+                            class="navbar-brand-bright">Cluster Controller</span></a>
+
+                <div class="navbar-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        <% if(user){ %>
+                        <%=user.name%> | <a href="/logout" style="color:#ccc;font-weight: bold">Logout</a>
+                        <% } else {%>
+                        You are not logged in
+                        <% } %>
+                    </p>
+                    <ul class="nav navbar-nav">
+                        <!-- <li><a href="" target="_blank">Go To MSS Server</a></li>
+                         <li><a href="" target="_blank">Go To MSC Site</a></li>
+                         <li><a href="" target="_blank">Go To MSS Docs Site</a></li>-->
+                    </ul>
+                </div>
+                <%- blocks.header %>
+            </div>
+        </div>
+    </div>
+    <!--HEADER ENDS-->
+</header>
+    <%- body -%>
+<footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <div class="navbar-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        &copy; Chameleon ScaleMaster - 2013
+                    </p>
+                    <%- blocks.footer %>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

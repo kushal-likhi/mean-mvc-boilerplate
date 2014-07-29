@@ -1,0 +1,19 @@
+{
+    "common": {
+        "socketEndpointURI": "/socket/stream",
+        "maxCountForListingApi": 100,
+        "oauth": {
+            "bearer": {
+                "generatorSecret": "3khjb4k3h4k3jh42kjh43k2h5kj5h3k6jg5j4df6hd456t45gf67j5gh7k6j7k56hfj5tfruygjg6iy456gf5j5jdt3uf645jhy45gy6i746iuyg4u5ft3ud5u34ft5jy",
+                "generatorAlgorithm": "AES192"
+            }
+        },
+        "statelessCookieName": "_npabotsess",
+        "sessionTimeMills": 1800000,
+        "authFailRedirectUrl": "/"
+    },
+    "development": {},
+    "production": {},
+    "test": {},
+    "qa": {}
+}

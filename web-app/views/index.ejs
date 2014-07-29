@@ -1,0 +1,25 @@
+<% layout('layouts/main') -%>
+<% block('title', "Login") -%>
+<% block('bodyClass', "login-page") -%>
+
+<div class="container">
+
+    <form class="form-signin" method="post" action="/">
+        <% if(error){ %>
+        <% error.forEach(function(err){ %>
+        <div class="alert alert-danger small-alert">
+            <%= err %>
+            <button type="button" class="close" data-dismiss="alert">×</button>
+        </div>
+        <% }) %>
+        <% } %>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input name="username" type="text" class="input-block-level" placeholder="UserName" value="<%=param('username')%>"/>
+        <input name="password" type="password" class="input-block-level" placeholder="Password" value="<%=param('password')%>"/>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    </form>
+
+</div>

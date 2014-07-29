@@ -1,0 +1,29 @@
+###########################
+#WebStorm Project Files
+###########################
+.idea/
+*ipr
+*.iml
+
+
+###########################
+#NPM Files
+###########################
+node_modules
+npm-debug.log
+
+
+###########################
+#Temp Dirs
+###########################
+.files
+.build
+.bowerCache
+.temp
+web-app/.bowerTemp
+
+###########################
+#Working Dirs
+###########################
+web-app/js/includes
+web-app/css/includes

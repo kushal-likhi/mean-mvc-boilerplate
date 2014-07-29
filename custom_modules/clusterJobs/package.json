@@ -1,0 +1,6 @@
+{
+    "name": "ClusterJobs",
+    "version": "0.1.1",
+    "description": "Manages and runs the scheduled Jobs on the cluster.",
+    "main": "./lib/jobs.js"
+}

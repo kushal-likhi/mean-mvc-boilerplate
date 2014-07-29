@@ -1,0 +1,4 @@
+{
+    "name":"IPC-Commands-For-Testing",
+    "main":"./lib/main"
+}

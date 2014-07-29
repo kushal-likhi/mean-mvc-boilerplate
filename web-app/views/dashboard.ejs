@@ -1,0 +1,34 @@
+<% layout('layouts/main') -%>
+<% block('title', "Login") -%>
+<% block('bodyClass', "dashboard") -%>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list navbar-list">
+                    <li class="{{page.dashboard}} active"><a href="#/"><i class="glyphicon glyphicon-dashboard"></i>Dashboard</a></li>
+                    <li class="nav-header">Audio Content</li>
+                    <li class="{{page.addAudioContent}}"><a href="#/audioContent/add"><i class="icon-music icon"></i>Add New</a></li>
+                    <li class="{{page.dashboar}}"><a href="#/audioContent/manage"><i class="icon-headphones icon"></i>Manage</a></li>
+                    <li class="nav-header">Users</li>
+                    <li class="{{page.dashboar}}"><a href="#/user/manage"><i class="icon-user icon"></i>Manage</a></li>
+                    <li class="nav-header">SMP Locations</li>
+                    <li class="{{page.dashboar}}"><a href="#/smp/manage"><i class="icon-screenshot icon"></i>Manage</a></li>
+                    <li class="nav-header">Mail Templates</li>
+                    <li class="{{page.mailTemplates}}"><a href="#/template/mail/list"><i class="icon-envelope icon"></i>Manage Mail Templates</a></li>
+                    <li class="nav-header">Geo Location</li>
+                    <li class="{{page.manageGeoIP}}"><a href="#/geo/update/geoIP"><i class="icon-globe icon"></i>Update GeoIP</a></li>
+                    <li class="{{page.manageGeoName}}"><a href="#/geo/update/geoName"><i class="icon-globe icon"></i>Update GeoName</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-9 bg-white">.col-md-8</div>
+    </div>
+
+</div>
