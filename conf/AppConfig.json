@@ -30,14 +30,14 @@
         "serverUrl": "http://localhost:9092"
     },
     "production": {
-        "port": 80,
+        "port": 9093,
         "serverUrl": "http://www.msm.com",
         "logger": {
             "logentries": {
-                "enabled": true
+                "enabled": false
             },
             "stdout": {
-                "enabled": false
+                "enabled": true
             }
         }
     },

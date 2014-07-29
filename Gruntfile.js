@@ -174,7 +174,9 @@ module.exports = function (grunt) {
                     conservativeCollapse: true,
                     collapseBooleanAttributes: true,
                     removeCommentsFromCDATA: true,
-                    removeOptionalTags: true
+                    removeOptionalTags: true,
+                    minifyJS: true,
+                    minifyCSS: true
                 },
                 files: [{
                     expand: true,
@@ -229,7 +231,7 @@ module.exports = function (grunt) {
                     src: ['generated/*']
                 }, {
                     expand: true,
-                    cwd: '<%= webApp.app %>bower_components/bootstrap/dist',
+                    cwd: '<%= webApp.app %>/bower_components/bootstrap/dist',
                     src: 'fonts/*',
                     dest: '<%= webApp.dist %>'
                 }]
