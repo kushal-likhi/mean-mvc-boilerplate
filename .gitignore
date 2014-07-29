@@ -34,4 +34,4 @@ web-app/css/includes
 #Angular UI files
 ###########################
 web-app/dist
-web-app/bower_components
+web-app/dev/bower_components
