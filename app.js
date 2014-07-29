@@ -58,11 +58,18 @@ AppBuilder.initLogger(function (message, level) {
 
 //Initialize the Express middlewares
 app.set('port', _config.port);
-app.set('views', path.join(__dirname, 'web-app', "views"));
+app.set('views', path.join(__dirname, "views"));
 app.engine('ejs', viewEngine);
 app.set('view engine', 'ejs');
 app.use(express.logger("dev"));
-app.use(express.static(path.join(__dirname, 'web-app')));
+
+//Web dirs are conditional
+if (__appEnv == "production") {
+    app.use(express.static(path.join(__dirname, 'web-app', "dist")));
+} else {
+    app.use(express.static(path.join(__dirname, 'web-app', "bower_components")));
+    app.use(express.static(path.join(__dirname, 'web-app', "dev")));
+}
 app.use(express.cookieParser());
 app.use(Util.localToBearerStrategyMiddleWare);
 app.use(express.json());
@@ -107,7 +114,7 @@ AppBuilder.initDomains(function () {
         //Initialize Socket IO Server
         globalEvent.emit("OnSocketIoStarted", socket.listen(server));
 
-        globalEvent.emit("OnEmailNotification", {"emailId":'vibhor.kukreja@intelligrape.com',"subject":'hello',"textMatter":'hi'});
+        globalEvent.emit("OnEmailNotification", {"emailId": 'vibhor.kukreja@intelligrape.com', "subject": 'hello', "textMatter": 'hi'});
 
         //Initialize IPC for test environment
         if (__appEnv == "test" && process.send) {

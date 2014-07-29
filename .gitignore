@@ -20,6 +20,8 @@ npm-debug.log
 .build
 .bowerCache
 .temp
+.tmp
+.sass-cache
 web-app/.bowerTemp
 
 ###########################
@@ -27,3 +29,9 @@ web-app/.bowerTemp
 ###########################
 web-app/js/includes
 web-app/css/includes
+
+###########################
+#Angular UI files
+###########################
+web-app/dist
+web-app/bower_components
