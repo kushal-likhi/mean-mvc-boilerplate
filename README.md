@@ -1,7 +1,3 @@
-##Readme##
-
-This is a bot which will compile and manage project data for us as well as mail everyone the updates without failing.
-
-
-
+#MEAN MVC Boilerplate#
+This is a boilerplate which uses MEAN stack with other trivial features like socket.io, childProcesses, jobs etc. The boilerplate has a scalable MVC architecture with RAD features and environment support.
 
