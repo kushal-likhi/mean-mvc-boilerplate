@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name yoApp.controller:MainCtrl
+ * @name meanMvcBoilerplate.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the yoApp
+ * Controller of the meanMvcBoilerplate
  */
-angular.module('yoApp')
+angular.module('meanMvcBoilerplate')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
