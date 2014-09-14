@@ -8,7 +8,7 @@
                 "generatorAlgorithm": "AES192"
             }
         },
-        "statelessCookieName": "_npabotsess",
+        "statelessCookieName": "_mvcbolierplatesess",
         "sessionTimeMills": 1800000,
         "authFailRedirectUrl": "/"
     },
