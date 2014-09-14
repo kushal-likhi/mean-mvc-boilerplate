@@ -1,10 +1,10 @@
 {
     "common": {
         "port": 8080,
-        "appName": "Node PA Bot",
+        "appName": "mean-mvc-boilerplate",
         "dataSource": {
             "mongo": {
-                "url": "mongodb://localhost:27017/pa-bot",
+                "url": "mongodb://localhost:27017/mean-mvc-boilerplate",
                 "poolSize": "100",
                 "ignoreConnectionError": false
             },
@@ -17,7 +17,7 @@
             "fullFormat": "[%level][%name-%pid][%file:%line][%time] - %message",
             "minimalFormat": "[%name-%pid][%file:%line] - %message",
             "level": "trace",
-            "appNameToDisplayInLog": "CSM",
+            "appNameToDisplayInLog": "mean-mvc-boilerplate",
             "showHidden": false,
             "stdout": {
                 "enabled": true
@@ -31,7 +31,7 @@
     },
     "production": {
         "port": 9093,
-        "serverUrl": "http://www.msm.com",
+        "serverUrl": "http://www.mmb.com",
         "logger": {
             "logentries": {
                 "enabled": false
@@ -46,7 +46,7 @@
         "serverUrl": "http://localhost:9093",
         "dataSource": {
             "mongo": {
-                "url": "mongodb://localhost:27017/csm-test",
+                "url": "mongodb://localhost:27017/mean-mvc-boilerplate",
                 "poolSize": "100",
                 "ignoreConnectionError": false
             }
@@ -54,7 +54,7 @@
     },
     "qa": {
         "port": 10095,
-        "serverUrl": "http://csm.qa4.intelligrape.net",
+        "serverUrl": "http://mmb.com.net",
         "logger": {
             "logentries": {
                 "enabled": true
