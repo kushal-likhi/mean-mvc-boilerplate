@@ -114,8 +114,6 @@ AppBuilder.initDomains(function () {
         //Initialize Socket IO Server
         globalEvent.emit("OnSocketIoStarted", socket.listen(server));
 
-        globalEvent.emit("OnEmailNotification", {"emailId": 'vibhor.kukreja@intelligrape.com', "subject": 'hello', "textMatter": 'hi'});
-
         //Initialize IPC for test environment
         if (__appEnv == "test" && process.send) {
             try {

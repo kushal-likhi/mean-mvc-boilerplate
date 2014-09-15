@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name yoApp
+ * @name meanMvcBoilerplate
  * @description
- * # yoApp
+ * # meanMvcBoilerplate
  *
  * Main module of the application.
  */
 angular
-  .module('yoApp', [
+  .module('meanMvcBoilerplate', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

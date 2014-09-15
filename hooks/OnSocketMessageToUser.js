@@ -5,7 +5,7 @@ exports.onEvent = function (apiUserId, message, eventName) {
 
     eventName = eventName || "DefaultEvent";
 
-    log.trace("Sending message to API User:", {
+    log.trace("Sending message to  User:", {
         apiUserId: apiUserId, message: message, eventName: eventName
     });
 
