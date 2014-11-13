@@ -8,7 +8,13 @@ var express = require('express'),
     connectFormidable = require('./custom_modules/connect-formidable'),
     Util = require("./src/Utils"),
     viewEngine = require("ejs-locals"),
-    socket = require('socket.io');
+    socket = require('socket.io'),
+    morgan=require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser=require('body-parser'),
+    methodOverride = require('method-override'),
+    errorHandler = require('errorhandler');
+
 
 
 // Use the BearerStrategy with Passport.
@@ -61,7 +67,7 @@ app.set('port', _config.port);
 app.set('views', path.join(__dirname, "views"));
 app.engine('ejs', viewEngine);
 app.set('view engine', 'ejs');
-app.use(express.logger("dev"));
+app.use(morgan("dev"));
 
 //Web dirs are conditional
 if (__appEnv == "production") {
@@ -70,19 +76,17 @@ if (__appEnv == "production") {
     app.use(express.static(path.join(__dirname, 'web-app', "bower_components")));
     app.use(express.static(path.join(__dirname, 'web-app', "dev")));
 }
-app.use(express.cookieParser());
+app.use(cookieParser());
 app.use(Util.localToBearerStrategyMiddleWare);
-app.use(express.json());
-app.use(express.urlencoded());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use(expressValidator());
-app.use(express.methodOverride());
+app.use(methodOverride());
 app.use(AppBuilder.apiHelperToolInjectionMiddleware);
 app.use(connectFormidable());
-app.use(app.router);
-app.configure('development', function () {
-    express.errorHandler.title = _config.appName;
-    app.use(express.errorHandler());
-});
+if ('development' == app.get('env')) {
+    app.use(errorHandler());
+}
 
 //Export the app via getter in global
 global.__defineGetter__("_app", function () {
